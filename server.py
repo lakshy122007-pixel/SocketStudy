@@ -1,9 +1,8 @@
 import socket             
-# next create a socket object 
 s = socket.socket()         
 print ("Socket successfully created")
 port = 12345                
-s.bind(('127.0.0.1', port))         
+s.bind(('', port))         
 print ("socket binded to %s" %(port)) 
 s.listen(5)     
 print ("socket is listening")            
@@ -11,5 +10,4 @@ while True:
   c, addr = s.accept()     
   print ('Got connection from', addr )
   c.send('Thank you for connecting'.encode()) 
-  # Close the connection with the client 
 c.close()
